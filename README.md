@@ -4,14 +4,7 @@
 * This is free software, and you are welcome to redistribute it under certain *
 * conditions; type `show c' for details.                                      *
 ******************************************************************************
-# Execute:
-[ANT]
-run_ant.bat -Dargument1=-h 
-run_ant.bat -Dargument1=-f -Dargument2=file_path_name
-
-[Example:]
-run_ant.bat -Dargument1=-f -Dargument2=puzzle/3/table3-0.txt
-
+# SAT Sudoku Solver:
 
 [Windows Commandline]
 run_planner.bat
@@ -26,9 +19,12 @@ run_planner.bat -f puzzle/3/table3-0.txt
 [Example:]
 ./run_planner -f puzzle/3/table3-0.txt
 
-[Encoding:]
+[Supported Encodings:]
 a. Efficient Encoding
 b. Minimal Encoding
 c. Extended Encoding
 d. Compact Encoding
 e. Unit Propogation
+
+References:
+
