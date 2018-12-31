@@ -1,5 +1,5 @@
 *******************************************************************************
-* SAT Sudoku Solver Copyright (C) 2011                                *
+* SAT Sudoku Solver Copyright (C) 2009                                *
 * This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.  *
 * This is free software, and you are welcome to redistribute it under certain *
 * conditions; type `show c' for details.                                      *
@@ -28,3 +28,4 @@ e. Unit Propogation
 
 References:
 
+[1] Gihwon Kwon, Himanshu Jain,"Optimized CNF Encoding for Sudoku Puzzles", In 13th International Conference on Logic for Programming Artificial Intelligence and Reasoning (LPAR 2006).
