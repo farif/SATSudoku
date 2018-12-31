@@ -1,9 +1,9 @@
-# Compile Source:
-ant build
-
-# Distrubution (SATSudoku.jar):
-ant dist
-
+*******************************************************************************
+* SAT Sudoku Solver Copyright (C) 2011                                *
+* This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.  *
+* This is free software, and you are welcome to redistribute it under certain *
+* conditions; type `show c' for details.                                      *
+******************************************************************************
 # Execute:
 [ANT]
 run_ant.bat -Dargument1=-h 
