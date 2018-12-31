@@ -28,4 +28,5 @@ e. Unit Propogation
 
 References:
 
-[1] Gihwon Kwon, Himanshu Jain,"Optimized CNF Encoding for Sudoku Puzzles", In 13th International Conference on Logic for Programming Artificial Intelligence and Reasoning (LPAR 2006).
+[1] Gihwon Kwon, Himanshu Jain,"Optimized CNF Encoding for Sudoku Puzzles", In 13th International 
+Conference on Logic for Programming Artificial Intelligence and Reasoning (LPAR 2006).
