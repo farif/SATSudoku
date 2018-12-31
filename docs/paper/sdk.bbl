@@ -1,0 +1,64 @@
+\begin{thebibliography}{10}
+
+\bibitem{Chapman1987}
+David Champan.
+\newblock Planning for conjunctive goals.
+\newblock {\em Artificial Intelligence}, 32:333--377, 1987.
+
+\bibitem{Bertram2005}
+Bertram Felgenhauer and Frazer Jarvis.
+\newblock Enumerating possible sudoku grids.
+\newblock 2005.
+\newblock http://www.shef.ac.uk/~pm1afj/sudoku/.
+
+\bibitem{Gihwon2006}
+Himanshu~Jain Gihwon~Kwon.
+\newblock Optimized cnf encoding for sudoku puzzles.
+\newblock 2006.
+\newblock 13th International Conference on Logic for Programming Artificial
+  Intelligence and Reasoning (LPAR 2006).
+
+\bibitem{McCarthy1969}
+McCarthy John and P.J. Hayes.
+\newblock Some philosophical problems from the standpoint of artificial
+  intelligence.
+\newblock {\em Meltzer and Michie, Machine Intelligence}, pages 463--502, 1969.
+
+\bibitem{DeadMan2005}
+DeadMan's~Handle Ltd.
+\newblock Sudoku solver.
+\newblock 2005.
+\newblock http://www.sudoku-solver.com/.
+
+\bibitem{Lynce2006}
+I.~Lynce and J.~Ouaknine.
+\newblock Sudoku as a sat problem.
+\newblock 2006.
+\newblock 9th International Symposium on Artificial Intelligence and
+  Mathematics.
+
+\bibitem{Henry2006}
+Henry Kautz~Bart Selman and Joerg Hoffmann.
+\newblock Satplan: Planning as satisfiability.
+\newblock 2006.
+\newblock 5th International Planning Competition.
+
+\bibitem{Stefik1981}
+Mark Stefik.
+\newblock Planning with constraints.
+\newblock {\em Artificial Intelligence}, 16:111--140, 1981.
+
+\bibitem{Pete2005}
+Pete Wake.
+\newblock Sudoku solver by logic.
+\newblock 2005.
+\newblock http://www.sudokusolver.co.uk.
+
+\bibitem{Weber2005}
+Tjark Weber.
+\newblock A sat-based sudoku solver.
+\newblock 2005.
+\newblock 12th International Conference on Logic for Programming Artificial
+  Intelligence and Reasoning(LPAR 2005).
+
+\end{thebibliography}

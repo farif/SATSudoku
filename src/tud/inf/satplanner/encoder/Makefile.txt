@@ -1,0 +1,10 @@
+Source = 	\
+		CompactEncoding.java \
+		EfficientEncoding.java \
+		EncodingScheme.java \
+		EncodingTypes.java \
+		ExtendedEncoding.java \
+		FactoryEncoding.java \
+		MinimalEncoding.java \
+
+include $(DEV_ROOT)/Makefile

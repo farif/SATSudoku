@@ -1,0 +1,6 @@
+Source = 	\
+		Sudoku.java \
+		SudokuCell.java \
+		SudokuHeader.java \
+
+include $(DEV_ROOT)/Makefile

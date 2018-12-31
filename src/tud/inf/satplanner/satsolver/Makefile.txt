@@ -1,0 +1,10 @@
+Source = 	\
+		Clause.java \
+		DIMACS.java \
+		Literal.java \
+		SAT4J.java \
+		SATFactory.java \
+		SATSolver.java \
+		SolverType.java \
+
+include $(DEV_ROOT)/Makefile

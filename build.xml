@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="SudokuPlanner">
+    <description>
+       Sudoku Planner Build File; For executing planner with given script
+       ant Driver -Dargument1=-f -Dargument2=puzzle_file_path
+       options:
+       ant Driver -Dargument1=-h
+    </description>
+	
+	<!-- set global properties for this build -->
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.5"/>
+    <property name="source" value="1.5"/>
+    <property name="classes.dir" value="classes"/>
+    	
+	<path id="SudokuPlanner.classpath">
+        <pathelement location="classes"/>
+    </path>
+    <target name="init">
+        <mkdir dir="classes"/>
+        <copy includeemptydirs="false" todir="classes">
+            <fileset dir="src" excludes="**/*.launch, **/*.java"/>
+        </copy>
+
+    </target>
+    <target name="clean">
+        <delete dir="classes"/>
+
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <javac debug="true" debuglevel="${debuglevel}" destdir="${classes.dir}" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="SudokuPlanner.classpath"/>
+        </javac>
+    </target>
+	
+	<target name="dist" depends="build" description="Compile Jar">
+	        <jar destfile="SudokuPlanner.jar" manifest="MANIFEST.MF" basedir="${classes.dir}"/>
+	    </target>
+
+	<manifest file="MANIFEST.MF">
+	    <attribute name="Main-Class" value="tud.inf.satplanner.sudoku.Driver"/>
+	  </manifest>
+	
+	<target name="Driver">
+        <java classname="tud.inf.satplanner.sudoku.Driver" failonerror="true" fork="yes">
+            <arg line="${argument1}"/><arg line="${argument2}"/>
+        	<classpath refid="SudokuPlanner.classpath"/>
+        </java>
+    </target>
+</project>

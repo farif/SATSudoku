@@ -1,0 +1,5 @@
+Source = 	\
+		FileInput.java \
+		SolutionWriter.java \
+
+include $(DEV_ROOT)/Makefile

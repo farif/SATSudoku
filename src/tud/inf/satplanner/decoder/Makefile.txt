@@ -1,0 +1,3 @@
+Source = DecodeSudoku.java \
+
+include $(DEV_ROOT)/Makefile
