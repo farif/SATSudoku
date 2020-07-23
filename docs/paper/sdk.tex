@@ -8,6 +8,8 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphics}
+\usepackage{natbib}
+\bibliographystyle{named}
 
 \newtheorem{definition}{Definition}[section]
 \newtheorem{lemma}[definition]{Lemma}
@@ -17,24 +19,20 @@
 % proceedings, working notes, and technical reports.
 %
 
-\title{Planning Sudoku f$\ddot{u}$r SAT}
+\title{Planning Sudoku for SAT}
 \author{M. Fareed Arif\\
               s9065145@inf.tu-dresden.de\\
-Center for Computational Logic (ICCL)\\
- Technische Universitet Dresden \\
-              Tel.: +123-45-678910, Fax: +123-45-678910
+Center for Computational Logic (ICCL), Technische Universitet Dresden
 }
 
 \maketitle
 
 \begin{abstract}
-\begin{quote}
-	Sudoku is a very simple and well-known puzzle.Many encoding schemes such as:Minimal, Efficient, Extended and Pre-Processed are known for this puzzle. Any Sudoku puzzle is formulated as a CNF formula $\phi$ which is satisfiable iff the Sudoku has a solution.We restrict our attention to consider only the instance of Sudoku which has only one solution and can only be solved using reasoning (i.e.with no search). Pre-Processed encoding suffices for this characterization, where other encoding schemes adds redundant clauses to minimal satisfying formulae; We observe that updating Pre-Processed encoding regarding pre-assigned cells configurations facilitate in higher degree of pre-processing and unit propagation can reduce the number of final clauses generated to be checked for a model.
-\end{quote}
+Sudoku is a very simple and well-known puzzle. Many encoding schemes such as Minimal, Efficient, Extended, and Pre-Processed are known for this puzzle. Any Sudoku puzzle is formulated as a CNF formula $\phi$ which is satisfiable if the Sudoku has a solution. We restrict our attention to consider only the instance of Sudoku which has only one solution and can only be solved using reasoning (i.e.with no search). Pre-Processed encoding suffices for this characterization, where other encoding schemes adds redundant clauses to minimal satisfying formulae; We observe that updating Pre-Processed encoding regarding pre-assigned cells configurations facilitate a higher degree of pre-processing and unit propagation can reduce the number of final clauses generated to be checked for a model.
 \end{abstract}
 
-\noindent In recent years, there has been a considerable renewed interest in the satisfiability problem (SAT) and many efficient SAT solvers are available. Traditionally planning has being formalized as deduction~\cite{McCarthy1969}, but we'd formulated our model on satisfiability rather than on deduction. This approach not only provides a more flexible framework for stating different kinds of constraints on plans, but also more accurately reflects the theory behind modern constraint-based planning systems~\cite{Henry2006}.
-
+\section{Introduction}
+In recent years, there has been a considerable renewed interest in the satisfiability problem (SAT) and many efficient SAT solvers are available. Traditionally planning has been formalized as deduction~\citet{McCarthy1969}, but we'd formulated our model on satisfiability rather than on deduction. This approach not only provides a more flexible framework for stating different kinds of constraints on plans but also more accurately reflects the theory behind modern constraint-based planning systems~\citet{Henry2006}.
 
 \section{Preliminaries}
 
@@ -43,16 +41,16 @@ Standard Sudoku puzzle usually appear in Newspapers is a $9\ast9$ grid instance 
 
 
 \begin{definition} A Sudoku puzzle is represented by a $\mathbb{N}\ast\mathbb{N}$ grid, which comprises of an $\sqrt{\mathbb{N}} \ast \sqrt{\mathbb{N}}$ sub-grids (also called boxes). 
-Some of the entries in the grid are filled with numbers from $1$ to $\mathbb{N}$, whereas other entries are left blank~\cite{Lynce2006};\end{definition}
+Some of the entries in the grid are filled with numbers from $1$ to $\mathbb{N}$, whereas other entries are left blank~\citet{Lynce2006};\end{definition}
 
-Puzzles are often assigned a difficulty level, which usually depends on the number of initial non-blank entries provided. This number may be as few as $17$ to test expert players for $9\ast9$ instance~\cite{Lynce2006}. But it could also be shown that with an automated planning system it can be reduced further to only one assignment and the planner still able to solve the problem correctly.
+Puzzles are often assigned a difficulty level, which usually depends on the number of initial non-blank entries provided. This number may be as few as $17$ to test expert players for $9\ast9$ instance~\citet{Lynce2006}. But it could also be shown that with an automated planning system it can be reduced further to only one assignment and the planner still able to solve the problem correctly.
 
 \begin{definition} A Sudoku puzzle is solved by assigning numbers from $1$ to $\mathbb{N}$ (size of puzzle) to the blank entries such that every row, every column, and every $\sqrt{\mathbb{N}} \ast \sqrt{\mathbb{N}}$ block (sub-grid) contains each of the any $\mathbb{N}$ possible numbers;\end{definition} 
 
-Propositional logic formalism is used to encode Sudoku puzzle in our encoding and other well known encoding schemes~\cite{Weber2005}~\cite{Lynce2006}~\cite{Gihwon2006}.
+Propositional logic formalism is used to encode Sudoku puzzle in our encoding and other well known encoding schemes~\citet{Weber2005}~\citet{Lynce2006}~\citet{Gihwon2006}.
 
 \section{Planning as Satisfiability}
-The complementary problem to deducibility is satisfiability that is finding a model for set of axioms. The formalism of planning as satisfiability turns out to have a number of  attractive properties like~\cite{Stefik1981}~\cite{Chapman1987}: 
+The complementary problem to deducibility is satisfiability that is finding a model for set of axioms. The formalism of planning as satisfiability turns out to have a number of  attractive properties like~\citet{Stefik1981}~\citet{chapman1987}: 
 \begin{itemize}
 \item It is easy to state arbitrary facts about any state of the world not just the initial and goal states;
 \item It is likewise easy to state arbitrary constraints on the plan e.g. spcifying an action performed at a any specifal time interval;
@@ -60,7 +58,7 @@ The complementary problem to deducibility is satisfiability that is finding a mo
 \end{itemize}
 
 \subsection{Sudoku Axiomatization}
-Many Sudoku solvers are already available~\cite{Pete2005}~\cite{DeadMan2005} and since there are more than $6.10^{21}$ possible grids for a simple looking $9\ast9$ puzzle instance~\cite{Bertram2005}; hence, a naive backtracking algorithm would be infeasible and the only feasible approach in this scenario is to combine backtracking with some form of constraint propagation. But we utilize a SAT-based approach in which a puzzle is translated into propositional formula $\Phi$ then we use any standard SAT solver to obtain the model (satisfying assignment) of $\Phi$; this model can then be readily translated into the solution of puzzle.
+Many Sudoku solvers are already available~\citet{Pete2005}~\citet{DeadMan2005} and since there are more than $6.10^{21}$ possible grids for a simple looking $9\ast9$ puzzle instance~\citet{Bertram2005}; hence, a naive backtracking algorithm would be infeasible and the only feasible approach in this scenario is to combine backtracking with some form of constraint propagation. But we utilize a SAT-based approach in which a puzzle is translated into propositional formula $\Phi$ then we use any standard SAT solver to obtain the model (satisfying assignment) of $\Phi$; this model can then be readily translated into the solution of puzzle.
 
 \subsubsection{Sudoku Encoding}
 Since puzzles are regarded as a propositional SAT problem, we'll provide an overview of various existing encoding schemes. A SAT problem is represented as a propositional formula  $\Phi$ where each variable $P_i$ is assigned $0$ ($\mathbb{F}$) or $1$ ($\mathbb{T}$) where i $\in$ $(1,\cdot\cdot\cdot,n)$. % ($|n|$ is the length of formula).
@@ -146,7 +144,7 @@ $\phi \downarrow V^{+} = \{ \forall C \in \phi. \forall {L \in C} | \neg(L = \ne
 
 $\phi \downarrow V^{\neg} = \{ \forall C \in \phi. \forall {L \in C} | \neg(L = x \Rightarrow x \in V^{\neg})\}$\\ 
 \\
-\noindent Giwhown~\cite{Gihwon2006} encoding is formulated as:
+\noindent Giwhown~\citet{Gihwon2006} encoding is formulated as:
 \begin{itemize}
 \item $\Phi_{pre.process}$ := ($\phi_{cell.uniq}$ $\cup$ $\phi_{row.uniq}$ $\cup$ $\phi_{col.uniq}$ $\cup$ $\phi_{blk.uniq})\Downarrow V^{\neg}$ $\cup$ \\
 ($\phi_{cell.def}$ $\cup$ $\phi_{row.def}$ $\cup$ $\phi_{col.def}$ $\cup$ $\phi_{blk.def})\downarrow V^{\neg}$ $\cup$ 
@@ -184,7 +182,6 @@ A satisfiability equivalence relation holds between $\Phi_{pre.process}$ and $\P
 \section{Conclusion}
 Our proposed encoding not only reduces a large amount of redundant clauses but also this process of redundant clause elimination coincides with the logic of finding newly assigned values for the blank cells. Thus not only eliminating a larger set of clauses for the solver but also filling in the blank cells in a correct fashion.
 
-\bibliography{ref}
-\bibliographystyle{plain}
+\bibliography{ref1}
 
 \end{document}
